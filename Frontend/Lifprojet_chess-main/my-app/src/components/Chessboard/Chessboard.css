@@ -1,0 +1,86 @@
+#chessboard{
+    width: 800px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(8,100px);
+    grid-template-rows: repeat(8,100px);
+}
+
+.ref{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.ref.hidden{
+    display: none;
+}
+
+.ref > .body{
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 400px);
+    height: 300px;
+    width: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.ref > .body > img{
+    height: 120px;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.ref > .body > img:hover{
+    cursor: pointer; 
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.ref > .body > .checkmate{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.ref > .body > .checkmate > span{
+   font-size: 35px;
+   color: white;
+}
+
+.ref > .body > .checkmate > button{
+    font-size: 35px;
+    color: white;
+    background-color: #779556;
+    padding: 25px 50px;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+ }
+
+.ref > .body > .checkmate > button:hover{
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.upperRow{
+    color: white;
+    font-size: 25px;
+}
+
+.upperRow > button{
+    font-size: 20px;
+    margin-left: 20px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.upperRow > button:hover{
+   cursor: pointer;
+   color: white;
+   background-color: red;
+}
